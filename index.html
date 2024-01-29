@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Chat-GPT Interface&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src=“script.js”&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="chat-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form action="/submit-query" method="post"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="api-key" name="api-key" placeholder="Enter your API key"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="user-input" name="user-input" placeholder="Type your message..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="submit" value="Submit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="chat-display" id="chat-display"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="history-accordion" id="history-accordion"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Accordion items will be dynamically added here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Add JavaScript code to handle user input and update chat display --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Get the API key input field, user input field, and chat display area</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const apiKeyInput = document.getElementById("api-key");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const userInput = document.getElementById("user-input");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const chatDisplay = document.getElementById("chat-display");</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to handle user input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function handleUserInput() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apiKey = apiKeyInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const userMessage = userInput.value;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Display the user message in the chat display area</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const userMessageElement = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>userMessageElement.innerHTML = `&lt;strong&gt;You:&lt;/strong&gt; ${userMessage}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>chatDisplay.appendChild(userMessageElement);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// TODO: Handle user input and communicate with the backend, using the apiKey variable</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Clear the user input field</p>
+<p class="p1"><span class="Apple-converted-space">            </span>userInput.value = "";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for user input form submission</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.querySelector('form').addEventListener('submit', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault(); // Prevent page reload</p>
+<p class="p1"><span class="Apple-converted-space">            </span>handleUserInput();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
